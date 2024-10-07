@@ -76,4 +76,73 @@ class _CalculatorViewState extends State<CalculatorView> {
       ),
     );
   }
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Calculator"),
+        backgroundColor: Colors.orange, // AppBar background color
+      ),
+      backgroundColor: Colors.black, // Set background color to black
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.centerRight,
+            child: Text(
+              expression,
+              style: const TextStyle(fontSize: 32, color: Colors.white), // White for visibility
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.centerRight,
+            child: Text(
+              result,
+              style: const TextStyle(fontSize: 48, color: Colors.white), // White for visibility
+            ),
+          ),
+          const Divider(color: Colors.white), // White divider
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              calcButton("7", Colors.white),
+              calcButton("8", Colors.white),
+              calcButton("9", Colors.white),
+              calcButton("/", Colors.orange), // Operators differentiated by color
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              calcButton("4", Colors.white),
+              calcButton("5", Colors.white),
+              calcButton("6", Colors.white),
+              calcButton("*", Colors.orange),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              calcButton("1", Colors.white),
+              calcButton("2", Colors.white),
+              calcButton("3", Colors.white),
+              calcButton("-", Colors.orange),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              calcButton("0", Colors.white),
+              calcButton("C", Colors.orange), // Clear button with red accent
+              calcButton("=", Colors.orange), // Equals button with green color
+              calcButton("+", Colors.orange),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }
+
+
